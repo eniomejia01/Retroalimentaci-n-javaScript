@@ -1,6 +1,6 @@
 // los objetos literales son OBJETOS que tienen pares de valor
 
-let personaje = {
+const personaje = {
 
     nombre: 'Tony Stark',
     codeName: 'IronMan',
@@ -21,7 +21,7 @@ let personaje = {
 };
 
 console.log(personaje);
-console.log('Nombre:', personaje.nombre);
+console.log('Nombre:', personaje.nombre); // para acceder un elemento del objeto
 console.log('Nombre:', personaje['nombre']);
 console.log('Edad: ', personaje.edad);
 
@@ -35,4 +35,31 @@ const x = 'vivo';
 console.log('Vivo', personaje[x]);
 
 console.log('Última película: ', personaje['ultimaPelicula']);
+
+// Mas detalles
+
+delete personaje.edad; // eliminar un elemento
+console.log(personaje);
+
+personaje.casado = true;
+
+const entrisPares = Object.entries( personaje ); // Obtener los pares de valores que hay en el objeto
+console.log( entrisPares );
+
+
+
+Object.freeze( personaje ); // congela el objeto \ bloquea la creación de nuevos propiedades
+
+
+personaje.dinero = 100000;
+personaje.casado = false;
+personaje.direccion.ubicacion = 'Costa Rica';
+console.log(personaje);
+
+
+const propiedades = Object.getOwnPropertyNames( personaje ); // listado de los elementos en el objeto en forma de arreglo
+const valores = Object.values( personaje ); 
+console.log({ propiedades, valores });
+
+
 
