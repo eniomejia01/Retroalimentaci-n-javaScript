@@ -33,8 +33,13 @@ function sumar(a, b) {
     return a + b;
 }
 
-const sumar2 = (a,b) => {
-    return a + b;
+const sumar2 = (a,b) =>  a + b; // Forma de usar la función flecha, si solo se tiene un return
+
+function getAleatorio() {
+    return Math.random();
 }
 
-console.log( sumar2(1, 2) );
+const getAleatorio2 = () => Math.random();
+
+
+console.log( getAleatorio2() );
