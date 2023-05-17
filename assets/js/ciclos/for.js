@@ -1,7 +1,7 @@
 
 
 
-const heroes = ['Batman', 'Superman', 'Mujer Maravilla', 'Aquaman'];
+const heroes = ['Batman', 'Superman', 'Mujer Maravilla', 'Aquaman']; /* array */
 
 console.warn('FOR TRADICIONAL');
 
@@ -19,6 +19,7 @@ console.warn('For of');
 for(let heroe of heroes) { // no entendí bien, investiga
     console.log( heroe );
 }
+
 
 
 
