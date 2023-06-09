@@ -1,5 +1,3 @@
-
-
 class Persona {
 
     static _conteo = 0;
@@ -48,25 +46,26 @@ class Persona {
 }
 
 
-const spiderman = new Persona('Peter Parker', 'Spider', 'Soy tu amigable vecino Spiderman');
-const iroman    = new Persona('Tony Stark', 'Iroman', 'Yo soy iroman');
+class Heroe extends Persona{ // Herencia
 
-// console.log( iroman);
+    clan = 'Sin clan';
 
-// spiderman.miFrase();
-// spiderman.quienSoy(); // ejecutando el metodo que está en la clase
 
-// spiderman.setComidaFavorita = 'El pay de cereza de la tía May';
+    constructor (nombre, codigo, frase) {
+        super(nombre, codigo, frase);
 
-// console.log( spiderman.getComidaFavorita )
+        this.clan = 'Los Avengers';
 
-// console.log( spiderman );
+    }
 
-console.log('Conteo estático', Persona._conteo);
-console.log( Persona.conteo);
+    quienSoy() {
+        console.log(`Soy ${ this.nombre }, ${this.clan}`);
+        super.quienSoy(); // esto permite llamar el mismo método que esta en la clase padre(Persona)
+    }
+}
 
-Persona.popiedadExterna = 'Hola mundo'; // INVESTIGAR 
+const spiderman = new Heroe('Peter Parker', 'Spider', 'Soy tu amigable vecino Spiderman');
 
-console.log( Persona.popiedadExterna);
-console.log( Persona)
+console.log( spiderman );
+spiderman.quienSoy();
 
